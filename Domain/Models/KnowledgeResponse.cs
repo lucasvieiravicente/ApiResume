@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ApiResume.Domain.Models
+﻿namespace ApiResume.Domain.Models
 {
     public class KnowledgeResponse
     {
@@ -11,5 +6,6 @@ namespace ApiResume.Domain.Models
         public string FirstDescription { get; set; }
         public string SecondDescription { get; set; }
         public string FilePathImage { get; set; }
+        public byte[] FileData { get; set; }
     }
 }
