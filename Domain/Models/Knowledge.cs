@@ -1,4 +1,5 @@
 ﻿using ApiResume.Domain.Context;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApiResume.Domain.Models
 {
@@ -16,9 +17,16 @@ namespace ApiResume.Domain.Models
             FilePathImage = filePathImage;
         }
 
+        [MaxLength(25)]
         public string Title { get; set; }
+        
+        [MaxLength(500)]
         public string FirstDescription { get; set; }
+
+        [MaxLength(500)]
         public string SecondDescription { get; set; }
+
+        [MaxLength(500)]
         public string FilePathImage { get; set; }
     }
 }
