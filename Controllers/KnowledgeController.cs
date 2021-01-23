@@ -23,11 +23,11 @@ namespace ApiResume.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<KnowledgeResponse>> Get()
+        public async Task<ActionResult<IEnumerable<KnowledgeResponse>>> Get()
         {
             try
             {
-                return Ok(_knowledgeService.GetAllKnowledge());
+                return Ok(await _knowledgeService.GetAllKnowledge());
             }
             catch(Exception ex)
             {

@@ -4,6 +4,7 @@ using ApiResume.Domain.Repository.Interfaces;
 using ApiResume.Services.Interfaces;
 using AutoMapper;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ApiResume.Services
 {
@@ -20,20 +21,20 @@ namespace ApiResume.Services
             _mapper = mapper;
         }
 
-        public IEnumerable<KnowledgeResponse> GetAllKnowledge()
+        public async Task<IEnumerable<KnowledgeResponse>> GetAllKnowledge()
         {
             var knowledges = _mapper.Map<List<KnowledgeResponse>>(_knowledgeRepository.GetAll());
-            SetImages(knowledges);
+            await SetImages(knowledges);
             return knowledges;
         }
 
-        private void SetImages(List<KnowledgeResponse> knowledges)
+        private async Task SetImages(List<KnowledgeResponse> knowledges)
         {
-            knowledges.ForEach(async knowledge => 
+            foreach(var knowledge in knowledges)
             {
                 var file = await _blobContext.GetFile(knowledge.FilePathImage);
                 knowledge.FileData = file.ToArray();
-            });
+            }
         }
     }
 }
