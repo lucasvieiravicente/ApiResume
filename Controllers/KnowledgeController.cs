@@ -34,5 +34,11 @@ namespace ApiResume.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("GetDate")]
+        public ActionResult<DateTime> GetDate()
+        {
+            return Ok(DateTime.Now.ToLocalTime());
+        }
     }
 }
