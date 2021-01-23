@@ -35,10 +35,36 @@ namespace ApiResume.Controllers
             }
         }
 
+        [HttpGet("Get")]
+        public ActionResult<IEnumerable<Knowledge>> GetDirtyInfos()
+        {
+            try
+            {
+                return Ok(_knowledgeService.GetAllKnowledgeWithoutPhotos());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetPhoto")]
+        public async Task<ActionResult<IEnumerable<byte[]>>> GetPhoto()
+        {
+            try
+            {
+                return Ok(await _knowledgeService.GetPhoto());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet("GetDate")]
         public ActionResult<DateTime> GetDate()
         {
-            return Ok(DateTime.Now.ToLocalTime());
+            return Ok(DateTime.Now);
         }
     }
 }

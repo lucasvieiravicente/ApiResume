@@ -21,6 +21,17 @@ namespace ApiResume.Services
             _mapper = mapper;
         }
 
+        public async Task<byte[]> GetPhoto()
+        {
+            var file = await _blobContext.GetFile("angular.png");
+            return file.ToArray();
+        }
+
+        public IEnumerable<Knowledge> GetAllKnowledgeWithoutPhotos()
+        {
+            return _knowledgeRepository.GetAll();
+        }
+
         public async Task<IEnumerable<KnowledgeResponse>> GetAllKnowledge()
         {
             var knowledges = _mapper.Map<List<KnowledgeResponse>>(_knowledgeRepository.GetAll());
