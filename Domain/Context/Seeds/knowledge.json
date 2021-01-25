@@ -21,25 +21,13 @@
     "Title": "JavaScript",
     "FirstDescription": "JavaScript é uma linguagem de programação interpretada estruturada, Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web.",
     "SecondDescription": "Linguagem a qual me sinto confortavel em prestar manutenção ou criar algum script para alguma necessidade web",
-    "FilePathImage": "netIcon.png"
+    "FilePathImage": "javaScript.png"
   },
   {
     "Title": "TypeScript",
     "FirstDescription": "TypeScript é um superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem. Anders Hejlsberg, arquiteto da linguagem C# e criador das linguagens Delphi e Turbo Pascal, trabalhou no desenvolvimento do TypeScript.",
     "SecondDescription": "Sigo da mesma maneira do JavaScript com relação ao TypeScript, já que comecei a imersão em frameworks front-end antes fui atrás de estudar um pouco sobre TS.",
     "FilePathImage": "typescript.png"
-  },
-  {
-    "Title": "TypeScript",
-    "FirstDescription": "TypeScript é um superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem. Anders Hejlsberg, arquiteto da linguagem C# e criador das linguagens Delphi e Turbo Pascal, trabalhou no desenvolvimento do TypeScript.",
-    "SecondDescription": "Sigo da mesma maneira do JavaScript com relação ao TypeScript, já que comecei a imersão em frameworks front-end antes fui atrás de estudar um pouco sobre TS.",
-    "FilePathImage": "typescript.png"
-  },
-  {
-    "Title": "JQuery",
-    "FirstDescription": "JQuery é uma biblioteca de funções JavaScript que interage com o HTML, desenvolvida para simplificar os scripts interpretados no navegador do cliente.",
-    "SecondDescription": "Tenho bastante conhecimento em tal framework já que no meu início de carreira foi o que mais utilizei para auxiliar no front-end.",
-    "FilePathImage": "jquery.png"
   },
   {
     "Title": "JQuery",
