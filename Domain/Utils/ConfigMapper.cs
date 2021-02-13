@@ -3,15 +3,12 @@ using AutoMapper;
 
 namespace ApiResume.Domain.Utils
 {
-    public class ConfigMapper
+    public class ConfigMapper : Profile
     {
-        public static IMapper Configure()
+        public ConfigMapper()
         {
-            return new MapperConfiguration(mapperConfig =>
-            {
-                mapperConfig.CreateMap<Knowledge, KnowledgeResponse>();
-                mapperConfig.CreateMap<KnowledgeResponse, Knowledge>();
-            }).CreateMapper();
+            CreateMap<Knowledge, KnowledgeResponse>();
+            CreateMap<KnowledgeResponse, Knowledge>();
         }
     }
 }

@@ -5,13 +5,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using ApiResume.Domain.Utils;
 using ApiResume.Services;
 using ApiResume.Services.Interfaces;
 using ApiResume.Domain.Repository.Interfaces;
 using ApiResume.Domain.Repository;
 using ApiResume.Domain.BlobContext.Interfaces;
 using ApiResume.Domain.BlobContext;
+using AutoMapper;
+using ApiResume.Domain.Utils;
 
 namespace ApiResume
 {
@@ -56,7 +57,7 @@ namespace ApiResume
             services.AddScoped<IKnowledgeRepository, KnowledgeRepository>();
             services.AddScoped<IBlobContext, BlobContext>();
             services.AddScoped<IKnowledgeService, KnowledgeService>();
-            services.AddSingleton(ConfigMapper.Configure());
+            services.AddAutoMapper(typeof(ConfigMapper));
         }
     }
 }
