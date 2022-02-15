@@ -3,54 +3,52 @@ using System;
 using ApiResume.Domain.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiResume.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20210125180007_UpdateKnowledgeSeed")]
-    partial class UpdateKnowledgeSeed
+    [Migration("20220215163109_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("Relational:MaxIdentifierLength", 64)
+                .HasAnnotation("ProductVersion", "5.0.14");
 
             modelBuilder.Entity("ApiResume.Domain.Models.Knowledge", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime>("DateAdded")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime>("DateModified")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("FilePathImage")
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("FirstDescription")
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<bool>("FlagActive")
-                        .HasColumnType("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("SecondDescription")
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("Title")
                         .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasColumnType("varchar(25)");
 
                     b.HasKey("Id");
 
@@ -59,9 +57,9 @@ namespace ApiResume.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f08bbb57-138d-4712-b547-72dd01c5bd4b"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "ba9a1895-bb7f-43ad-a411-fd4318d8bd78",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "csharp.png",
                             FirstDescription = "C# é uma linguagem de programação, desenvolvida pela Microsoft como parte da plataforma .NET",
                             FlagActive = true,
@@ -70,9 +68,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("266fc120-1033-49c8-956f-14a30aaec5c0"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "4f08438e-4396-4ad8-9f58-c48d9cc7615a",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "netCoreIcon.png",
                             FirstDescription = ".NET Core é um framework livre e de código aberto para os sistemas operacionais Windows, Linux e macOS. É um sucessor de código aberto do .NET Framework.",
                             FlagActive = true,
@@ -81,9 +79,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c2278d25-4081-4fc4-b9dc-6d730bbc58a3"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "2d6d7943-c9e6-442b-8e0e-d014b3aac5f8",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "netIcon.png",
                             FirstDescription = "O .NET Framework é uma iniciativa da empresa Microsoft, que visa uma plataforma única para desenvolvimento e execução de sistemas e aplicações. Todo e qualquer código gerado para .NET pode ser executado em qualquer dispositivo que possua um framework de tal plataforma.",
                             FlagActive = true,
@@ -92,9 +90,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("efae61c0-8e3d-42ad-ad4f-4e14c513b898"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "a71c562d-b1e9-4879-a305-823325790b9d",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "javaScript.png",
                             FirstDescription = "JavaScript é uma linguagem de programação interpretada estruturada, Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web.",
                             FlagActive = true,
@@ -103,9 +101,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1bd45a14-2176-49e5-abc3-317a03f37216"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "84dfdb61-f111-4306-956f-8a98aa46cf9f",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "typescript.png",
                             FirstDescription = "TypeScript é um superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem. Anders Hejlsberg, arquiteto da linguagem C# e criador das linguagens Delphi e Turbo Pascal, trabalhou no desenvolvimento do TypeScript.",
                             FlagActive = true,
@@ -114,9 +112,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f151f5ad-09d4-48e5-a1e0-e7fe6d4a4ac4"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "6344613a-a5a4-43bd-b2c5-96febe7c8232",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "jquery.png",
                             FirstDescription = "JQuery é uma biblioteca de funções JavaScript que interage com o HTML, desenvolvida para simplificar os scripts interpretados no navegador do cliente.",
                             FlagActive = true,
@@ -125,9 +123,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e2623502-c2d5-46fc-83e7-6cc03fc06f2a"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "3239af84-4975-4b87-8c3c-34d3c75d8df3",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "bootstrap.png",
                             FirstDescription = "Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web usando HTML, CSS e JavaScript.",
                             FlagActive = true,
@@ -136,9 +134,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8247277f-0e28-4556-b0a2-412821548d85"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "eac1044e-0a88-421c-a603-895770c75701",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "azure.png",
                             FirstDescription = "O Microsoft Azure é uma plataforma destinada à execução de aplicativos e serviços, baseada nos conceitos da computação em nuvem.",
                             FlagActive = true,
@@ -147,9 +145,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a548b384-2661-47fe-b448-f48d0ba33a8b"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "401a5e07-7946-434c-8d8e-1a39a9ef8161",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "sqlServer.png",
                             FirstDescription = "O Microsoft SQL Server é um sistema gerenciador de Banco de dados relacional desenvolvido pela Sybase em parceria com a Microsoft. Esta parceria durou até 1994, com o lançamento da versão para Windows NT e desde então a Microsoft mantém a manutenção do produto.",
                             FlagActive = true,
@@ -158,9 +156,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("235d392a-ed14-494f-b6b1-b107686c2292"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "00be71a1-496f-4109-a7ab-6554f0c375fb",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "git.png",
                             FirstDescription = "Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo.",
                             FlagActive = true,
@@ -169,9 +167,9 @@ namespace ApiResume.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9a286814-5bc9-4247-893a-4aaa216ba599"),
-                            DateAdded = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(2021, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = "8b9052b5-54e0-47b9-977b-0bc22e6c0362",
+                            DateAdded = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2022, 2, 15, 13, 31, 8, 793, DateTimeKind.Local).AddTicks(9065),
                             FilePathImage = "angular.png",
                             FirstDescription = "Angular é uma plataforma de aplicações web de código-fonte aberto e front-end baseado em TypeScript liderado pela Equipe Angular do Google e por uma comunidade de indivíduos e corporações. Angular é uma reescrita completa do AngularJS, feito pela mesma equipe que o construiu.",
                             FlagActive = true,

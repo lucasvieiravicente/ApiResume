@@ -19,7 +19,7 @@ namespace ApiResume.Domain.Utils
         public static void ConfigureDatabaseConnection(IConfiguration configuration, IServiceCollection services)
         {
             var connection = configuration.GetConnectionString("ApiData");
-            services.AddDbContext<EFContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<EFContext>(options => options.UseMySQL(connection));
         }
 
         public static void ConfigureDI(IServiceCollection services)

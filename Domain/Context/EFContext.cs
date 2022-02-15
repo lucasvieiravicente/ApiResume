@@ -16,7 +16,7 @@ namespace ApiResume.Domain.Context
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        {            
             SeedTables(modelBuilder);
         }
 
@@ -31,11 +31,10 @@ namespace ApiResume.Domain.Context
         {
             var json = new StreamReader(jsonPath, Encoding.UTF8).ReadToEnd();
             var seeds = JsonConvert.DeserializeObject<IEnumerable<T>>(json);
-            var date = new DateTime(2021, 01, 09);
+            var date = DateTime.Now;
 
             foreach(var seed in seeds)
             {
-                seed.Id = Guid.NewGuid();
                 seed.DateAdded = date;
                 seed.DateModified = date;
             }
