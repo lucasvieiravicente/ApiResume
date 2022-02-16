@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using ApiResume.Domain.Models;
 using ApiResume.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace ApiResume.Controllers
+namespace ApiResume.Controllers.V1
 {
     [ApiController]
-    [Route("[controller]")]
+    [ApiVersion("1", Deprecated = true)]
+    [Route("[controller]/V{v:apiVersion}")]
     public class KnowledgeController : ControllerBase
     {
         private readonly ILogger<KnowledgeController> _logger;
@@ -31,6 +31,7 @@ namespace ApiResume.Controllers
             }
             catch(Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -44,6 +45,7 @@ namespace ApiResume.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -57,6 +59,7 @@ namespace ApiResume.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(ex.Message);
             }
         }
@@ -70,6 +73,7 @@ namespace ApiResume.Controllers
             }
             catch(Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(ex.Message);
             }
         }

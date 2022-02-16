@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ApiResume.Domain.Utils;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 namespace ApiResume
 {
@@ -19,13 +20,13 @@ namespace ApiResume
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddApiVersioning();
+            services.ConfigureApiVersioning();
             services.ConfigureDI();
             services.ConfigureSwaggerGenInfos();
             services.ConfigureDatabaseConnection(Configuration);
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider versionProvider)
         {
             if (env.IsDevelopment())
             {
@@ -43,7 +44,7 @@ namespace ApiResume
                 endpoints.MapControllers();
             });
 
-            ConfigStartup.ConfigureSwagger(app);
+            app.ConfigureSwagger(versionProvider);
         }     
     }
 }

@@ -12,6 +12,7 @@ using ApiResume.Services.Interfaces;
 using ApiResume.Domain.Context;
 using BlobCont = ApiResume.Domain.BlobContext.BlobContext;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 namespace ApiResume.Domain.Utils
 {
@@ -39,38 +40,28 @@ namespace ApiResume.Domain.Utils
                 x.AssumeDefaultVersionWhenUnspecified = true;
                 x.ReportApiVersions = true;
             });
+
+            services.AddVersionedApiExplorer(x =>
+            {
+                x.GroupNameFormat = "'V'V";
+                x.SubstituteApiVersionInUrl = true;
+            });
         }
 
-        public static void ConfigureSwagger(this IApplicationBuilder app)
+        public static void ConfigureSwagger(this IApplicationBuilder app, IApiVersionDescriptionProvider versionProvider)
         {
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Knowledge V1");
+                foreach(var version in versionProvider.ApiVersionDescriptions)
+                    c.SwaggerEndpoint($"/swagger/{version.GroupName}/swagger.json", $"API Knowledge {version.GroupName}");      
             });
         }
 
         public static void ConfigureSwaggerGenInfos(this IServiceCollection services)
         {
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo()
-                {
-                    Title = "API Knowledge",
-                    Description = "A simple API to populate my webresume online with informations about my professional knowledge and study",
-                    License = new OpenApiLicense()
-                    {
-                        Name = "MIT License",
-                        Url = new Uri("https://github.com/lucasvieiravicente/WebResumeAngular/blob/main/LICENSE")
-                    },
-                    Contact = new OpenApiContact()
-                    {
-                        Name = "Lucas V. Vicente",
-                        Email = "lucasvieiravicente1@gmail.com",
-                        Url = new Uri("https://white-moss-0cf7e1e0f.azurestaticapps.net/")
-                    }
-                });
-            });
+            services.AddSwaggerGen();
+            services.ConfigureOptions<ConfigSwagger>();
         }
     }
 }
