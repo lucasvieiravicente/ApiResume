@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApiResume.Domain.Models;
+using ApiResume.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -13,10 +14,12 @@ namespace ApiResume.Controllers.V2
     public class KnowledgeController : ControllerBase
     {
         private readonly ILogger<KnowledgeController> _logger;
+        private readonly IKnowledgeServiceV2 _knowledgeService;
 
-        public KnowledgeController(ILogger<KnowledgeController> logger)
+        public KnowledgeController(ILogger<KnowledgeController> logger, IKnowledgeServiceV2 knowledgeService)
         {
             _logger = logger;
+            _knowledgeService = knowledgeService;
         }
 
         [HttpGet]
@@ -24,37 +27,9 @@ namespace ApiResume.Controllers.V2
         {
             try
             {
-                return Ok();
+                return Ok(await _knowledgeService.GetAllKnowledge());
             }
             catch(Exception ex)
-            {
-                _logger.LogError(ex.Message);
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpGet("Get")]
-        public ActionResult<IEnumerable<Knowledge>> GetDirtyInfos()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpGet("GetPhoto")]
-        public async Task<ActionResult<IEnumerable<byte[]>>> GetPhoto()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
                 return BadRequest(ex.Message);

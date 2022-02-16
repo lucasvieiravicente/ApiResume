@@ -28,7 +28,8 @@ namespace ApiResume.Domain.Utils
         {
             services.AddScoped<IKnowledgeRepository, KnowledgeRepository>();
             services.AddScoped<IBlobContext, BlobCont>();
-            services.AddScoped<IKnowledgeService, KnowledgeService>();
+            services.AddScoped<IKnowledgeServiceV1, KnowledgeServiceV1>();
+            services.AddScoped<IKnowledgeServiceV2, KnowledgeServiceV2>();
             services.AddAutoMapper(typeof(ConfigMapper));
         }
 

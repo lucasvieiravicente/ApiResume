@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApiResume.Domain.BlobContext
 {
+    [Obsolete("Service no longer in use because personal Azure Storage is offline.")]
     public class BlobContext : IBlobContext
     {
         private readonly BlobContainerClient _blobContainerClient;
