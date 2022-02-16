@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApiResume.Domain.Models;
-using ApiResume.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -14,12 +13,10 @@ namespace ApiResume.Controllers.V2
     public class KnowledgeController : ControllerBase
     {
         private readonly ILogger<KnowledgeController> _logger;
-        private readonly IKnowledgeService _knowledgeService;
 
-        public KnowledgeController(ILogger<KnowledgeController> logger, IKnowledgeService knowledgeService)
+        public KnowledgeController(ILogger<KnowledgeController> logger)
         {
             _logger = logger;
-            _knowledgeService = knowledgeService;
         }
 
         [HttpGet]
@@ -27,7 +24,7 @@ namespace ApiResume.Controllers.V2
         {
             try
             {
-                return Ok(await _knowledgeService.GetAllKnowledge());
+                return Ok();
             }
             catch(Exception ex)
             {
@@ -41,7 +38,7 @@ namespace ApiResume.Controllers.V2
         {
             try
             {
-                return Ok(_knowledgeService.GetAllKnowledgeWithoutPhotos());
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -55,7 +52,7 @@ namespace ApiResume.Controllers.V2
         {
             try
             {
-                return Ok(await _knowledgeService.GetPhoto());
+                return Ok();
             }
             catch (Exception ex)
             {
