@@ -64,7 +64,14 @@ namespace ApiResume.Controllers
         [HttpGet("GetDate")]
         public ActionResult<DateTime> GetDate()
         {
-            return Ok(DateTime.Now);
+            try
+            {
+                return Ok(DateTime.Now);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
