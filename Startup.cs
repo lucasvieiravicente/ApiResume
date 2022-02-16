@@ -19,9 +19,10 @@ namespace ApiResume
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            ConfigStartup.ConfigureDI(services);
-            ConfigStartup.ConfigureSwaggerGenInfos(services);
-            ConfigStartup.ConfigureDatabaseConnection(Configuration, services);
+            services.AddApiVersioning();
+            services.ConfigureDI();
+            services.ConfigureSwaggerGenInfos();
+            services.ConfigureDatabaseConnection(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

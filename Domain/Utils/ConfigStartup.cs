@@ -11,18 +11,19 @@ using ApiResume.Services;
 using ApiResume.Services.Interfaces;
 using ApiResume.Domain.Context;
 using BlobCont = ApiResume.Domain.BlobContext.BlobContext;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiResume.Domain.Utils
 {
     public static class ConfigStartup
     {
-        public static void ConfigureDatabaseConnection(IConfiguration configuration, IServiceCollection services)
+        public static void ConfigureDatabaseConnection(this IServiceCollection services, IConfiguration configuration)
         {
             var connection = configuration.GetConnectionString("ApiData");
             services.AddDbContext<EFContext>(options => options.UseMySQL(connection));
         }
 
-        public static void ConfigureDI(IServiceCollection services)
+        public static void ConfigureDI(this IServiceCollection services)
         {
             services.AddScoped<IKnowledgeRepository, KnowledgeRepository>();
             services.AddScoped<IBlobContext, BlobCont>();
@@ -30,7 +31,17 @@ namespace ApiResume.Domain.Utils
             services.AddAutoMapper(typeof(ConfigMapper));
         }
 
-        public static void ConfigureSwagger(IApplicationBuilder app)
+        public static void ConfigureApiVersioning(this IServiceCollection services)
+        {
+            services.AddApiVersioning(x =>
+            {
+                x.DefaultApiVersion = new ApiVersion(2, 0);
+                x.AssumeDefaultVersionWhenUnspecified = true;
+                x.ReportApiVersions = true;
+            });
+        }
+
+        public static void ConfigureSwagger(this IApplicationBuilder app)
         {
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -39,7 +50,7 @@ namespace ApiResume.Domain.Utils
             });
         }
 
-        public static void ConfigureSwaggerGenInfos(IServiceCollection services)
+        public static void ConfigureSwaggerGenInfos(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
             {
