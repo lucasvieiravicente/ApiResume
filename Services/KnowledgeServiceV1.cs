@@ -22,7 +22,7 @@ namespace ApiResume.Services
 
         public async Task<IEnumerable<KnowledgeResponse>> GetAllKnowledge()
         {
-            IEnumerable<KnowledgeResponse> knowledges = GetAllKnowledgeResponse();
+            IEnumerable<KnowledgeResponse> knowledges = await GetAllKnowledgeResponse();
             foreach (KnowledgeResponse knowledge in knowledges)
             {
                 MemoryStream file = await _blobContext.GetFile(knowledge.FilePathImage);

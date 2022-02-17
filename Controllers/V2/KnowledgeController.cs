@@ -36,6 +36,20 @@ namespace ApiResume.Controllers.V2
             }
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Knowledge>> GetKnowledge([FromRoute] string id)
+        {
+            try
+            {
+                return Ok(await _knowledgeService.GetKnowledge(id));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet("GetDate")]
         public ActionResult<DateTime> GetDate()
         {

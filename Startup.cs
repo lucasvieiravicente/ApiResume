@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ApiResume.Domain.Utils;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace ApiResume
 {
@@ -19,7 +21,10 @@ namespace ApiResume
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
             services.ConfigureApiVersioning();
             services.ConfigureDI();
             services.ConfigureSwaggerGenInfos();

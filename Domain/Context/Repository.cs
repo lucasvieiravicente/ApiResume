@@ -1,5 +1,7 @@
 ﻿using ApiResume.Domain.Context.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ApiResume.Domain.Context
@@ -13,15 +15,12 @@ namespace ApiResume.Domain.Context
             _context = context;
         }
 
+        public virtual async Task<IEnumerable<T>> GetAll() => await Query().ToListAsync();
+
         public virtual async Task Delete(T entity)
         {
             _context.Remove(entity);
             await Commit();
-        }
-
-        public virtual IEnumerable<T> GetAll()
-        {
-            return _context.Set<T>();
         }
 
         public virtual async Task Insert(T entity)
@@ -35,6 +34,8 @@ namespace ApiResume.Domain.Context
             _context.Update(entity);
             await Commit();
         }
+
+        public IQueryable<T> Query() => _context.Set<T>().AsQueryable();
 
         private async Task Commit() => await _context.SaveChangesAsync();
     }

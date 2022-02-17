@@ -2,6 +2,7 @@
 using ApiResume.Domain.Repository.Interfaces;
 using AutoMapper;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ApiResume.Services
 {
@@ -16,8 +17,8 @@ namespace ApiResume.Services
             _mapper = mapper;
         }
 
-        public IEnumerable<Knowledge> GetAllKnowledges() => _knowledgeRepository.GetAll();
+        public async Task<IEnumerable<Knowledge>> GetAllKnowledges() => await _knowledgeRepository.GetAll();
 
-        public IEnumerable<KnowledgeResponse> GetAllKnowledgeResponse() => _mapper.Map<List<KnowledgeResponse>>(_knowledgeRepository.GetAll());
+        public async Task<IEnumerable<KnowledgeResponse>> GetAllKnowledgeResponse() => _mapper.Map<List<KnowledgeResponse>>(await _knowledgeRepository.GetAll());
     }
 }
