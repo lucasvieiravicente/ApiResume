@@ -6,16 +6,25 @@ using System.IO;
 using System;
 using System.Text;
 using ApiResume.Domain.Context.EntityMaps;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Debug;
 
 namespace ApiResume.Domain.Context
 {
     public class EFContext : DbContext
     {
         private readonly string _pathSeedFiles;
+        public static readonly ILoggerFactory loggerFactory = new LoggerFactory(new[] { new DebugLoggerProvider() });
+
         public EFContext(DbContextOptions<EFContext> options) : base(options) 
         {
             char separatorChar = Path.DirectorySeparatorChar;
             _pathSeedFiles = $"Domain{separatorChar}Context{separatorChar}Seeds{separatorChar}";
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

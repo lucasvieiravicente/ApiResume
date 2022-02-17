@@ -6,7 +6,7 @@ namespace ApiResume.Domain.Context
 {
     public class Repository<T> : IRepository<T> where T : EntityBase, new()
     {
-        private readonly EFContext _context;
+        protected readonly EFContext _context;
 
         public Repository(EFContext context)
         {
