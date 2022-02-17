@@ -4,27 +4,32 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 using System;
-using System.Reflection;
 using System.Text;
+using ApiResume.Domain.Context.EntityMaps;
 
 namespace ApiResume.Domain.Context
 {
     public class EFContext : DbContext
     {
-        public EFContext(DbContextOptions<EFContext> options) : base(options)
+        private readonly string _pathSeedFiles;
+        public EFContext(DbContextOptions<EFContext> options) : base(options) 
         {
+            char separatorChar = Path.DirectorySeparatorChar;
+            _pathSeedFiles = $"Domain{separatorChar}Context{separatorChar}Seeds{separatorChar}";
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {            
+        {
+            modelBuilder.CreateStackMap();
+            modelBuilder.CreateKnowledgeMap();
+
             SeedTables(modelBuilder);
         }
 
-        protected virtual void SeedTables(ModelBuilder modelBuilder)
+        protected void SeedTables(ModelBuilder modelBuilder)
         {
-            var separate = Path.DirectorySeparatorChar;
-            var path = Path.GetFullPath($"Domain{separate}Context{separate}Seeds{separate}knowledge.json");
-            SeedTable<Knowledge>(path, modelBuilder);
+            SeedTable<Stack>($"{_pathSeedFiles}stacks.json", modelBuilder);
+            SeedTable<Knowledge>($"{_pathSeedFiles}knowledges.json", modelBuilder);
         }
 
         protected void SeedTable<T>(string jsonPath, ModelBuilder modelBuilder) where T : EntityBase
@@ -39,14 +44,10 @@ namespace ApiResume.Domain.Context
                 seed.DateModified = date;
             }
 
-            SeedTable(seeds, modelBuilder);
-        }
-
-        protected void SeedTable<T>(IEnumerable<T> seeds, ModelBuilder modelBuilder) where T : class
-        {
             modelBuilder.Entity<T>().HasData(seeds);
         }
 
+        public DbSet<Stack> Stacks { get; set; }
         public DbSet<Knowledge> Knowledges { get; set; }
     }
 }

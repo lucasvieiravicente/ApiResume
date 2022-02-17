@@ -1,0 +1,30 @@
+﻿[
+  {
+    "StackId":  1,
+    "StackName": "Linguagens de programação"
+  },
+  {
+    "StackId": 2,
+    "StackName": "Frameworks back-end"
+  },
+  {
+    "StackId": 3,
+    "StackName": "Frameworks front-end"
+  },
+  {
+    "StackId": 4,
+    "StackName": "Banco de dados"
+  },
+  {
+    "StackId": 5,
+    "StackName": "CI/CD"
+  },
+  {
+    "StackId": 6,
+    "StackName": "Ferramentas de versionamento"
+  },
+  {
+    "StackId": 7,
+    "StackName": "Outros"
+  }
+]

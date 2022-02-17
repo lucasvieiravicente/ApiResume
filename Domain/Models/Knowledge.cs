@@ -1,4 +1,5 @@
 ﻿using ApiResume.Domain.Context;
+using ApiResume.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace ApiResume.Domain.Models
@@ -28,5 +29,9 @@ namespace ApiResume.Domain.Models
 
         [MaxLength(500)]
         public string FilePathImage { get; set; }
+
+        public StackGroup StackId { get; set; }
+
+        public virtual Stack Stack { get; set; }
     }
 }

@@ -3,66 +3,77 @@
     "Title": "C#",
     "FirstDescription": "C# é uma linguagem de programação, desenvolvida pela Microsoft como parte da plataforma .NET",
     "SecondDescription": "A línguagem que estudo desde o começo na faculdade e a que atuo no mercado atualmente, me sinto confortável em dizer que é a com mais experiência e expertise atuando com diversos projetos.",
-    "FilePathImage": "csharp.png"
+    "FilePathImage": "csharp.png",
+    "StackId": 1
   },
   {
     "Title": ".NET Core",
     "FirstDescription": ".NET Core é um framework livre e de código aberto para os sistemas operacionais Windows, Linux e macOS. É um sucessor de código aberto do .NET Framework.",
     "SecondDescription": "Framework ao qual posso dizer junto do C# que tenho mais expertise, apesar de estudar a mais tempo o .NET \"tradicional\", o .NET Core é o framework ao qual apliquei todo meu conhecimento de maneira profissional trazendo resoluções mais complexas.",
-    "FilePathImage": "netCoreIcon.png"
+    "FilePathImage": "netCoreIcon.png",
+    "StackId": 2
   },
   {
     "Title": ".NET Framework",
     "FirstDescription": "O .NET Framework é uma iniciativa da empresa Microsoft, que visa uma plataforma única para desenvolvimento e execução de sistemas e aplicações. Todo e qualquer código gerado para .NET pode ser executado em qualquer dispositivo que possua um framework de tal plataforma.",
     "SecondDescription": "Framework que tenho um longo estudo seja a nível acadêmico e com alguns projetos, desenvolvendo simples projetos em WinForms e manutenções em WCF.",
-    "FilePathImage": "netIcon.png"
+    "FilePathImage": "netIcon.png",
+    "StackId": 2
   },
   {
     "Title": "JavaScript",
     "FirstDescription": "JavaScript é uma linguagem de programação interpretada estruturada, Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web.",
     "SecondDescription": "Linguagem a qual me sinto confortavel em prestar manutenção ou criar algum script para alguma necessidade web",
-    "FilePathImage": "javaScript.png"
+    "FilePathImage": "javaScript.png",
+    "StackId": 1
   },
   {
     "Title": "TypeScript",
     "FirstDescription": "TypeScript é um superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem. Anders Hejlsberg, arquiteto da linguagem C# e criador das linguagens Delphi e Turbo Pascal, trabalhou no desenvolvimento do TypeScript.",
     "SecondDescription": "Sigo da mesma maneira do JavaScript com relação ao TypeScript, já que comecei a imersão em frameworks front-end antes fui atrás de estudar um pouco sobre TS.",
-    "FilePathImage": "typescript.png"
+    "FilePathImage": "typescript.png",
+    "StackId": 1
   },
   {
     "Title": "JQuery",
     "FirstDescription": "JQuery é uma biblioteca de funções JavaScript que interage com o HTML, desenvolvida para simplificar os scripts interpretados no navegador do cliente.",
     "SecondDescription": "Tenho bastante conhecimento em tal framework já que no meu início de carreira foi o que mais utilizei para auxiliar no front-end.",
-    "FilePathImage": "jquery.png"
+    "FilePathImage": "jquery.png",
+    "StackId": 3
   },
   {
     "Title": "Bootstrap",
     "FirstDescription": "Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web usando HTML, CSS e JavaScript.",
     "SecondDescription": "Tenho conhecimento considerável por ser uma ferramenta que normalmente utilizo quando necessito criar uma página do \"zero\" para acelerar o processo de desenvolvimento, então me sinto confortável para trabalhar com a mesma.",
-    "FilePathImage": "bootstrap.png"
+    "FilePathImage": "bootstrap.png",
+    "StackId": 3
   },
   {
     "Title": "Azure",
     "FirstDescription": "O Microsoft Azure é uma plataforma destinada à execução de aplicativos e serviços, baseada nos conceitos da computação em nuvem.",
     "SecondDescription": "Uma ferramenta que comecei a conhecer no estágio, porém continuo os estudos por fora desde então, já que utilizo muito atualmente, pois os projetos Web estão armazenados na App Services, além de utilizarem o SQL no Azure, Blobs para armazenamento, e CDN para a página estática. Atualmente além de utilizar o portal Azure utilizo as ferramentas Azure Storage Explorer e Azure Storage Emulator.",
-    "FilePathImage": "azure.png"
+    "FilePathImage": "azure.png",
+    "StackId": 7
   },
   {
     "Title": "SQL Server",
     "FirstDescription": "O Microsoft SQL Server é um sistema gerenciador de Banco de dados relacional desenvolvido pela Sybase em parceria com a Microsoft. Esta parceria durou até 1994, com o lançamento da versão para Windows NT e desde então a Microsoft mantém a manutenção do produto.",
     "SecondDescription": "Banco de dados ao qual tenho mais conhecimento, estudo e utilizo o mesmo desce o início da minha jornada, ao qual atualmente utilizo o SQL Server Management Studio para gerenciamento dos DBs.",
-    "FilePathImage": "sqlServer.png"
+    "FilePathImage": "sqlServer.png",
+    "StackId": 4
   },
   {
     "Title": "Git",
     "FirstDescription": "Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo.",
     "SecondDescription": "O sistema de versionamento ao qual estou habituado a trabalhar, sempre utilizei o Git, e fiz o versionamento ou pelo GitHub ou GitLab.",
-    "FilePathImage": "git.png"
+    "FilePathImage": "git.png",
+    "StackId": 6
   },
   {
     "Title": "Angular",
     "FirstDescription": "Angular é uma plataforma de aplicações web de código-fonte aberto e front-end baseado em TypeScript liderado pela Equipe Angular do Google e por uma comunidade de indivíduos e corporações. Angular é uma reescrita completa do AngularJS, feito pela mesma equipe que o construiu.",
     "SecondDescription": "Framework front-end ao qual venho estudando e ganhando cada vez mais experiência, atualmente consigo construir aplicações para necessidades simples.",
-    "FilePathImage": "angular.png"
+    "FilePathImage": "angular.png",
+    "StackId": 3
   }
 ]
