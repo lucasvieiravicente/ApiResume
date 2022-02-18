@@ -13,6 +13,8 @@ using ApiResume.Services.Interfaces.Knowledges;
 using ApiResume.Services.Knowledges;
 using ApiResume.Services.Interfaces.Stacks;
 using ApiResume.Services.Stacks;
+using ApiResume.Services.Interfaces;
+using ApiResume.Services.Utils;
 
 namespace ApiResume.Domain.Utils
 {
@@ -20,7 +22,7 @@ namespace ApiResume.Domain.Utils
     {
         public static void ConfigureDatabaseConnection(this IServiceCollection services, IConfiguration configuration)
         {
-            var connection = configuration.GetConnectionString("ApiData");
+            string connection = configuration.GetConnectionString("ApiData");
             services.AddDbContext<EFContext>(options => options.UseMySQL(connection));
         }
 
@@ -29,6 +31,7 @@ namespace ApiResume.Domain.Utils
             services.AddScoped<IBlobContext, BlobCont>();
             services.AddScoped<IKnowledgeRepository, KnowledgeRepository>();
             services.AddScoped<IStackRepository, StackRepository>();
+            services.AddScoped<IFTPService, FTPService>();
             services.AddScoped<IStackService, StackService>();
             services.AddScoped<IKnowledgeServiceV1, KnowledgeServiceV1>();
             services.AddScoped<IKnowledgeServiceV2, KnowledgeServiceV2>();
