@@ -35,7 +35,7 @@ namespace ApiResume.Domain.Context
             await Commit();
         }
 
-        public IQueryable<T> Query() => _context.Set<T>().AsQueryable();
+        protected IQueryable<T> Query() => _context.Set<T>().AsQueryable();
 
         private async Task Commit() => await _context.SaveChangesAsync();
     }

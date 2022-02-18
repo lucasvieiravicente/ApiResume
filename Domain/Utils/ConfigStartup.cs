@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using ApiResume.Services.Interfaces.Knowledges;
 using ApiResume.Services.Knowledges;
+using ApiResume.Services.Interfaces.Stacks;
+using ApiResume.Services.Stacks;
 
 namespace ApiResume.Domain.Utils
 {
@@ -24,8 +26,10 @@ namespace ApiResume.Domain.Utils
 
         public static void ConfigureDI(this IServiceCollection services)
         {
-            services.AddScoped<IKnowledgeRepository, KnowledgeRepository>();
             services.AddScoped<IBlobContext, BlobCont>();
+            services.AddScoped<IKnowledgeRepository, KnowledgeRepository>();
+            services.AddScoped<IStackRepository, StackRepository>();
+            services.AddScoped<IStackService, StackService>();
             services.AddScoped<IKnowledgeServiceV1, KnowledgeServiceV1>();
             services.AddScoped<IKnowledgeServiceV2, KnowledgeServiceV2>();
             services.AddAutoMapper(typeof(ConfigMapper));

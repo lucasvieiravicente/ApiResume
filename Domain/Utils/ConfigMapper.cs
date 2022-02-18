@@ -10,6 +10,7 @@ namespace ApiResume.Domain.Utils
         {
             CreateMap<Knowledge, KnowledgeResponse>();
             CreateMap<KnowledgeResponse, Knowledge>();
+            CreateMap<Stack, StackResponse>();
         }
     }
 }
