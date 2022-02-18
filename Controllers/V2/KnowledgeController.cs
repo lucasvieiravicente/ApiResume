@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ApiResume.Domain.Enums;
 using ApiResume.Domain.Models;
 using ApiResume.Domain.Responses;
 using ApiResume.Services.Interfaces.Knowledges;
@@ -9,17 +10,12 @@ using Microsoft.Extensions.Logging;
 
 namespace ApiResume.Controllers.V2
 {
-    [ApiController]
     [ApiVersion("2")]
-    [Route("[controller]/V{v:apiVersion}")]
-    public class KnowledgeController : ControllerBase
+    public class KnowledgeController : DefaultController<KnowledgeController>
     {
-        private readonly ILogger<KnowledgeController> _logger;
         private readonly IKnowledgeServiceV2 _knowledgeService;
-
-        public KnowledgeController(ILogger<KnowledgeController> logger, IKnowledgeServiceV2 knowledgeService)
+        public KnowledgeController(ILogger<KnowledgeController> logger, IKnowledgeServiceV2 knowledgeService) : base(logger)
         {
-            _logger = logger;
             _knowledgeService = knowledgeService;
         }
 
@@ -43,6 +39,20 @@ namespace ApiResume.Controllers.V2
             try
             {
                 return Ok(await _knowledgeService.GetKnowledge(id));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("ByStackId/{stackId}")]
+        public async Task<ActionResult<Knowledge>> GetKnowledgesByStackId([FromRoute] StackGroup stackId)
+        {
+            try
+            {
+                return Ok(await _knowledgeService.GetKnowledgeByStackId(stackId));
             }
             catch (Exception ex)
             {

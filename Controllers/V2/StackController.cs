@@ -7,18 +7,13 @@ using System.Threading.Tasks;
 
 namespace ApiResume.Controllers.V2
 {
-    [ApiController]
     [ApiVersion("2")]
-    [Route("[controller]/v{v:apiVersion}")]
-    public class StackController : ControllerBase
+    public class StackController : DefaultController<StackController>
     {
         private readonly IStackService _stackService;
-        private readonly ILogger<StackController> _logger;
-
-        public StackController(IStackService stackService, ILogger<StackController> logger)
+        public StackController(IStackService stackService, ILogger<StackController> logger) : base(logger)
         {
             _stackService = stackService;
-            _logger = logger;
         }
 
         [HttpGet]

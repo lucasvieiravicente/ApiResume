@@ -8,17 +8,13 @@ using Microsoft.Extensions.Logging;
 
 namespace ApiResume.Controllers.V1
 {
-    [ApiController]
     [ApiVersion("1", Deprecated = true)]
-    [Route("[controller]/V{v:apiVersion}")]
-    public class KnowledgeController : ControllerBase
+    public class KnowledgeController : DefaultController<KnowledgeController>
     {
-        private readonly ILogger<KnowledgeController> _logger;
         private readonly IKnowledgeServiceV1 _knowledgeService;
 
-        public KnowledgeController(ILogger<KnowledgeController> logger, IKnowledgeServiceV1 knowledgeService)
+        public KnowledgeController(ILogger<KnowledgeController> logger, IKnowledgeServiceV1 knowledgeService) : base(logger)
         {
-            _logger = logger;
             _knowledgeService = knowledgeService;
         }
 
