@@ -1,18 +1,16 @@
-﻿using System;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using ApiResume.Domain.BlobContext.Interfaces;
 using ApiResume.Domain.Repository;
 using ApiResume.Domain.Repository.Interfaces;
-using ApiResume.Services;
-using ApiResume.Services.Interfaces;
 using ApiResume.Domain.Context;
 using BlobCont = ApiResume.Domain.BlobContext.BlobContext;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using ApiResume.Services.Interfaces.Knowledges;
+using ApiResume.Services.Knowledges;
 
 namespace ApiResume.Domain.Utils
 {

@@ -1,9 +1,8 @@
-﻿using ApiResume.Domain.Models;
-using ApiResume.Domain.Responses;
+﻿using ApiResume.Domain.Responses;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ApiResume.Services.Interfaces
+namespace ApiResume.Services.Interfaces.Knowledges
 {
     public interface IKnowledgeService
     {

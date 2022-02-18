@@ -1,14 +1,13 @@
 ﻿using ApiResume.Domain.BlobContext.Interfaces;
-using ApiResume.Domain.Models;
 using ApiResume.Domain.Repository.Interfaces;
 using ApiResume.Domain.Responses;
-using ApiResume.Services.Interfaces;
+using ApiResume.Services.Interfaces.Knowledges;
 using AutoMapper;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace ApiResume.Services
+namespace ApiResume.Services.Knowledges
 {
     public class KnowledgeServiceV1 : KnowledgeServiceBase, IKnowledgeServiceV1
     {

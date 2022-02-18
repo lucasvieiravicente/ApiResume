@@ -1,4 +1,4 @@
-﻿namespace ApiResume.Services.Interfaces
+﻿namespace ApiResume.Services.Interfaces.Knowledges
 {
     public interface IKnowledgeServiceV1 : IKnowledgeService
     {

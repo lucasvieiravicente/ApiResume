@@ -5,7 +5,7 @@ using AutoMapper;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ApiResume.Services
+namespace ApiResume.Services.Knowledges
 {
     public class KnowledgeServiceBase
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApiResume.Domain.Models;
 using ApiResume.Domain.Responses;
-using ApiResume.Services.Interfaces;
+using ApiResume.Services.Interfaces.Knowledges;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
