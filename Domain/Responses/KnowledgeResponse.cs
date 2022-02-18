@@ -1,6 +1,6 @@
 ﻿using ApiResume.Domain.Enums;
 
-namespace ApiResume.Domain.Models
+namespace ApiResume.Domain.Responses
 {
     public class KnowledgeResponse
     {

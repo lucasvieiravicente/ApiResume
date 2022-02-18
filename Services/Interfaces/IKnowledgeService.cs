@@ -1,4 +1,5 @@
 ﻿using ApiResume.Domain.Models;
+using ApiResume.Domain.Responses;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

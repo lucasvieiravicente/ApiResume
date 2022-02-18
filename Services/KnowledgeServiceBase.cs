@@ -1,5 +1,6 @@
 ﻿using ApiResume.Domain.Models;
 using ApiResume.Domain.Repository.Interfaces;
+using ApiResume.Domain.Responses;
 using AutoMapper;
 using System.Collections.Generic;
 using System.Threading.Tasks;
