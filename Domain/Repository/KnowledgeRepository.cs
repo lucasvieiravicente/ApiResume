@@ -1,7 +1,10 @@
 ﻿using ApiResume.Domain.Context;
+using ApiResume.Domain.Enums;
 using ApiResume.Domain.Models;
 using ApiResume.Domain.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ApiResume.Domain.Repository
@@ -15,6 +18,13 @@ namespace ApiResume.Domain.Repository
             return await Query()
                             .Include(x => x.Stack)
                             .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<IEnumerable<Knowledge>> GetKnowledgeByStackId(StackGroup stackId)
+        {
+            return await Query()
+                            .Where(x => x.StackId == stackId)
+                            .ToListAsync();
         }
     }
 }
