@@ -1,38 +1,50 @@
 ﻿using ApiResume.Services.Interfaces;
+using FluentFTP;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using System;
 using System.IO;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace ApiResume.Services.Utils
 {
     public class FTPService : IFTPService
     {
-        private string _host;
-        private string _directory;
-        private string _user;
-        private string _password;
+        private readonly string _host;
+        private readonly string _user;
+        private readonly string _password;
+        private readonly ILogger<FTPService> _logger;
 
-        public FTPService(IConfiguration configuration)
+        public FTPService(IConfiguration configuration, ILogger<FTPService> logger)
         {
-            _host = configuration.GetConnectionString("FtpHost");
-            _directory = configuration.GetSection("FtpDirectory").Value;
-            _user = configuration.GetSection("FtpUser").Value;
-            _password = configuration.GetSection("FtpPassword").Value;
+            IConfigurationSection section = configuration.GetSection("Ftp");
+            _host = section.GetSection("FtpHost").Value;
+            _user = section.GetSection("FtpUser").Value;
+            _password = section.GetSection("FtpPassword").Value;
+            _logger = logger;
         }
 
         public async Task<byte[]> GetImage(string fileName)
         {
-            string uri = $"{_host}/{_directory}/{fileName}";
-            var request = WebRequest.Create(uri) as FtpWebRequest;
+            try
+            {
+                var client = new FtpClient(_host, _user, _password) { ValidateAnyCertificate = true };
+                await client.AutoConnectAsync();
 
-            request.Method = WebRequestMethods.Ftp.DownloadFile;
-            request.Credentials = new NetworkCredential(_user, _password);
+                using var stream = new MemoryStream();
+                if (!await client.DownloadAsync(stream, fileName))
+                    _logger.LogInformation($"Não foi possível fazer o download do arquivo {fileName}");
 
-            var response = await request.GetResponseAsync() as FtpWebResponse;
-            var stream = response.GetResponseStream() as MemoryStream;
+                await client.DisconnectAsync();
 
-            return stream.ToArray();
+                return stream.ToArray();
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
+
         }
     }
 }

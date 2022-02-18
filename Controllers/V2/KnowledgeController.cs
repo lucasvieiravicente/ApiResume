@@ -33,6 +33,20 @@ namespace ApiResume.Controllers.V2
             }
         }
 
+        [HttpGet("GetPhoto")]
+        public async Task<ActionResult<IEnumerable<byte[]>>> GetPhoto()
+        {
+            try
+            {
+                return File(await _knowledgeService.GetPhoto(), "image/png");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Knowledge>> GetKnowledge([FromRoute] string id)
         {
