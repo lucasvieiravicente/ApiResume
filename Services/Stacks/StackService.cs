@@ -19,9 +19,9 @@ namespace ApiResume.Services.Stacks
             _stackRepository = stackRepository;
         }
 
-        public async Task<StackResponse> GetStackPerStackId(StackGroup stackId)
+        public async Task<StackResponse> GetStackByStackId(StackGroup stackId)
         {
-            return _mapper.Map<StackResponse>(await _stackRepository.GetStackPerStackId(stackId));
+            return _mapper.Map<StackResponse>(await _stackRepository.GetStackByStackId(stackId));
         }
 
         public async Task<IEnumerable<StackResponse>> GetAll()

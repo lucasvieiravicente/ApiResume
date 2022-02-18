@@ -27,7 +27,7 @@ namespace ApiResume.Controllers.V2
         {
             try
             {
-                return Ok(await _stackService.GetStackPerStackId(stackId));
+                return Ok(await _stackService.GetStackByStackId(stackId));
             }
             catch(Exception ex)
             {

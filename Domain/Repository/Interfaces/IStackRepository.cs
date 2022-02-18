@@ -7,6 +7,6 @@ namespace ApiResume.Domain.Repository.Interfaces
 {
     public interface IStackRepository : IRepository<Stack>
     {
-        Task<Stack> GetStackPerStackId(StackGroup stackId);
+        Task<Stack> GetStackByStackId(StackGroup stackId);
     }
 }
