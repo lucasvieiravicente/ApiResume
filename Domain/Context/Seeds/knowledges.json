@@ -2,21 +2,21 @@
   {
     "Title": "C#",
     "FirstDescription": "C# é uma linguagem de programação, desenvolvida pela Microsoft como parte da plataforma .NET",
-    "SecondDescription": "A línguagem que estudo desde o começo na faculdade e a que atuo no mercado atualmente, me sinto confortável em dizer que é a com mais experiência e expertise atuando com diversos projetos.",
+    "SecondDescription": "A línguagem que estudo desde o começo na faculdade e a que mais utilizo no mercado atualmente, me sinto confortável em dizer que é a com mais experiência e expertise atuando em diversos projetos.",
     "FilePathImage": "csharp.png",
     "StackId": 1
   },
   {
     "Title": ".NET Core",
     "FirstDescription": ".NET Core é um framework livre e de código aberto para os sistemas operacionais Windows, Linux e macOS. É um sucessor de código aberto do .NET Framework.",
-    "SecondDescription": "Framework ao qual posso dizer junto do C# que tenho mais expertise, apesar de estudar a mais tempo o .NET \"tradicional\", o .NET Core é o framework ao qual apliquei todo meu conhecimento de maneira profissional trazendo resoluções mais complexas.",
+    "SecondDescription": "Conjunto de ferramentas .NET é onde tenho minha maior base de conhecimento e apliquei soluções mais complexas.",
     "FilePathImage": "netCoreIcon.png",
     "StackId": 2
   },
   {
     "Title": ".NET Framework",
     "FirstDescription": "O .NET Framework é uma iniciativa da empresa Microsoft, que visa uma plataforma única para desenvolvimento e execução de sistemas e aplicações. Todo e qualquer código gerado para .NET pode ser executado em qualquer dispositivo que possua um framework de tal plataforma.",
-    "SecondDescription": "Framework que tenho um longo estudo seja a nível acadêmico e com alguns projetos, desenvolvendo simples projetos em WinForms e manutenções em WCF.",
+    "SecondDescription": "Conjunto de ferramentas .NET é onde tenho minha maior base de conhecimento e apliquei soluções mais complexas.",
     "FilePathImage": "netIcon.png",
     "StackId": 2
   },
@@ -44,22 +44,36 @@
   {
     "Title": "Bootstrap",
     "FirstDescription": "Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web usando HTML, CSS e JavaScript.",
-    "SecondDescription": "Tenho conhecimento considerável por ser uma ferramenta que normalmente utilizo quando necessito criar uma página do \"zero\" para acelerar o processo de desenvolvimento, então me sinto confortável para trabalhar com a mesma.",
+    "SecondDescription": "Tenho um bom conhecimento por ser uma ferramenta que normalmente utilizo quando necessito criar uma página do \"zero\" para acelerar o processo de desenvolvimento, então me sinto confortável para trabalhar com a mesma.",
     "FilePathImage": "bootstrap.png",
     "StackId": 3
   },
   {
     "Title": "Azure",
     "FirstDescription": "O Microsoft Azure é uma plataforma destinada à execução de aplicativos e serviços, baseada nos conceitos da computação em nuvem.",
-    "SecondDescription": "Uma ferramenta que comecei a conhecer no estágio, porém continuo os estudos por fora desde então, já que utilizo muito atualmente, pois os projetos Web estão armazenados na App Services, além de utilizarem o SQL no Azure, Blobs para armazenamento, e CDN para a página estática. Atualmente além de utilizar o portal Azure utilizo as ferramentas Azure Storage Explorer e Azure Storage Emulator.",
+    "SecondDescription": "Ferramenta que conheço mais sobre, já que utilizo muito atualmente, alguns dos meus projetos antigos eram armazenados na App Services, além de utilizarem o SQL no Azure, Blobs para armazenamento, e CDN para a página estática.",
     "FilePathImage": "azure.png",
+    "StackId": 7
+  },
+  {
+    "Title": "AWS",
+    "FirstDescription": "Amazon Web Services, também conhecido como AWS, é uma plataforma de serviços de computação em nuvem, que formam uma plataforma de computação na nuvem oferecida pela Amazon.com. Os serviços são oferecidos em várias áreas geográficas distribuídas pelo mundo.",
+    "SecondDescription": "Ferramenta que venho me aprimorando sobre, apesar de utilizar seus produtos em projetos de clientes não tenho uma grande expertise como a Azure.",
+    "FilePathImage": "aws.png",
     "StackId": 7
   },
   {
     "Title": "SQL Server",
     "FirstDescription": "O Microsoft SQL Server é um sistema gerenciador de Banco de dados relacional desenvolvido pela Sybase em parceria com a Microsoft. Esta parceria durou até 1994, com o lançamento da versão para Windows NT e desde então a Microsoft mantém a manutenção do produto.",
-    "SecondDescription": "Banco de dados ao qual tenho mais conhecimento, estudo e utilizo o mesmo desce o início da minha jornada, ao qual atualmente utilizo o SQL Server Management Studio para gerenciamento dos DBs.",
+    "SecondDescription": "Banco de dados ao qual tenho mais conhecimento, estudo e utilizo o mesmo desce o início da minha jornada com DBs.",
     "FilePathImage": "sqlServer.png",
+    "StackId": 4
+  },
+  {
+    "Title": "MySQL",
+    "FirstDescription": "O MySQL é um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface. É atualmente um dos sistemas de gerenciamento de bancos de dados mais populares da Oracle Corporation, com mais de 10 milhões de instalações pelo mundo..",
+    "SecondDescription": "Banco de dados que comecei a utilizar com mais frequencia recentemente para poder reduzir custos nos projetos que participei.",
+    "FilePathImage": "mysql.png",
     "StackId": 4
   },
   {
@@ -72,8 +86,37 @@
   {
     "Title": "Angular",
     "FirstDescription": "Angular é uma plataforma de aplicações web de código-fonte aberto e front-end baseado em TypeScript liderado pela Equipe Angular do Google e por uma comunidade de indivíduos e corporações. Angular é uma reescrita completa do AngularJS, feito pela mesma equipe que o construiu.",
-    "SecondDescription": "Framework front-end ao qual venho estudando e ganhando cada vez mais experiência, atualmente consigo construir aplicações para necessidades simples.",
+    "SecondDescription": "Framework front-end que tenho mais experiência, atualmente consigo construir aplicações com certo nível de complexidade com esta ferramenta.",
     "FilePathImage": "angular.png",
     "StackId": 3
+  },
+  {
+    "Title": "ReactJS",
+    "FirstDescription": "O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. É mantido pelo Facebook, Instagram, outras empresas e uma comunidade de desenvolvedores individuais. É utilizado nos sites da Netflix, Imgur, Feedly, Airbnb, SeatGeek, HelloSign, Walmart e outros.",
+    "SecondDescription": "Framework front-end ao qual venho estudando e ganhando cada vez mais experiência, atualmente consigo construir aplicações para necessidades simples.",
+    "FilePathImage": "reactjs.png",
+    "StackId": 3
+  },
+  {
+    "Title": "Azure Pipelines",
+    "FirstDescription": "Azure Pipelines cria e testa automaticamente projetos de código para torná-los disponíveis para outras pessoas. Ele funciona com praticamente qualquer linguagem ou tipo de projeto. Azure Pipelines combina CI (integração contínua) e CD (entrega contínua) para testar e criar seu código e enviar para qualquer destino.",
+    "SecondDescription": "Tenho certo conhecimento já que utilizei do mesmo para fazer deploy de projetos simples que criei e utilizo na Azure.",
+    "FilePathImage": "azurePipelines.png",
+    "StackId": 5
+  },
+  {
+    "Title": "GitLab CI/CD",
+    "FirstDescription": "GitLab é uma plataforma de DevOps de código aberto que oferece soluções para todo o fluxo de desenvolvimento e implantação, como repositórios Git (para versionamento de código), Wikis (para gestão de conhecimento e documentação), quadros de tarefas (similar ao Jira), monitoramento e implantação.",
+    "SecondDescription": "Conheço somente como utilizar por utilizar na época de estagiário, porém nunca tive a oportunidade de criar um serviço com o mesmo.",
+    "FilePathImage": "gitlabcicd.png",
+    "StackId": 5
+  },
+  {
+    "Title": "Jenkins",
+    "FirstDescription": "Jenkins é um servidor de automação de código aberto. Ele ajuda a automatizar as partes do desenvolvimento de software relacionadas à construção, teste e implantação, facilitando a integração e entrega contínuas. É um sistema baseado em servidor que é executado em contêineres de servlet, como o Apache Tomcat.",
+    "SecondDescription": "Conheço somente como utilizar pois atuei em projetos que utilizam do mesmo junto do Bitbucket, porém nunca tive a oportunidade de criar um serviço com o mesmo.",
+    "FilePathImage": "jenkins.png",
+    "StackId": 5
   }
 ]
+
