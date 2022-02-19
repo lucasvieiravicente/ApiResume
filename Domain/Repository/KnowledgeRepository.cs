@@ -20,7 +20,7 @@ namespace ApiResume.Domain.Repository
                             .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<IEnumerable<Knowledge>> GetKnowledgeByStackId(StackGroup stackId)
+        public async Task<IEnumerable<Knowledge>> GetKnowledgeByStackId(StackIds stackId)
         {
             return await Query()
                             .Where(x => x.StackId == stackId)

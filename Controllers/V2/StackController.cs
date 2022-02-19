@@ -18,7 +18,7 @@ namespace ApiResume.Controllers.V2
 
         [HttpGet]
         [Route("{stackId}")]
-        public async Task<IActionResult> GetStackPerStackId(StackGroup stackId)
+        public async Task<IActionResult> GetStackPerStackId(StackIds stackId)
         {
             try
             {

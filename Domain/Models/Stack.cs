@@ -8,7 +8,7 @@ namespace ApiResume.Domain.Models
     public class Stack : EntityBase
     {
         public Stack() { }
-        public Stack(string stackName, StackGroup stackId)
+        public Stack(string stackName, StackIds stackId)
         {
             StackName = stackName;
             StackId = stackId;
@@ -17,7 +17,7 @@ namespace ApiResume.Domain.Models
         [MaxLength(60)]
         public string StackName { get; set; }
 
-        public StackGroup StackId { get; set; }
+        public StackIds StackId { get; set; }
 
         public virtual IEnumerable<Knowledge> Knowledges { get; set; }
     }

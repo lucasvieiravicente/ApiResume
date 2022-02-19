@@ -9,6 +9,6 @@ namespace ApiResume.Domain.Responses
         public string SecondDescription { get; set; }
         public string FilePathImage { get; set; }
         public byte[] FileData { get; set; }
-        public StackGroup StackId { get; set; }
+        public StackIds StackId { get; set; }
     }
 }

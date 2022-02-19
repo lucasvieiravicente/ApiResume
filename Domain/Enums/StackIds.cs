@@ -1,6 +1,6 @@
 ﻿namespace ApiResume.Domain.Enums
 {
-    public enum StackGroup
+    public enum StackIds
     {
         ProgrammingLanguages = 1,
         BackEndFrameworks = 2,

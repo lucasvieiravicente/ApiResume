@@ -62,7 +62,7 @@ namespace ApiResume.Controllers.V2
         }
 
         [HttpGet("ByStackId/{stackId}")]
-        public async Task<ActionResult<Knowledge>> GetKnowledgesByStackId([FromRoute] StackGroup stackId)
+        public async Task<ActionResult<Knowledge>> GetKnowledgesByStackId([FromRoute] StackIds stackId)
         {
             try
             {

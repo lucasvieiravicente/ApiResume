@@ -11,7 +11,7 @@ namespace ApiResume.Domain.Repository
     {
         public StackRepository(EFContext context) : base(context) { }
 
-        public async Task<Stack> GetStackByStackId(StackGroup stackId)
+        public async Task<Stack> GetStackByStackId(StackIds stackId)
         {
             return await Query().FirstOrDefaultAsync(x => x.StackId == stackId);
         }

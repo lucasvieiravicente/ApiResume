@@ -30,7 +30,7 @@ namespace ApiResume.Domain.Models
         [MaxLength(500)]
         public string FilePathImage { get; set; }
 
-        public StackGroup StackId { get; set; }
+        public StackIds StackId { get; set; }
 
         public virtual Stack Stack { get; set; }
     }

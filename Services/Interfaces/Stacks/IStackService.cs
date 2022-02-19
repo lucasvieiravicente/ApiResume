@@ -7,7 +7,7 @@ namespace ApiResume.Services.Interfaces.Stacks
 {
     public interface IStackService
     {
-        Task<StackResponse> GetStackByStackId(StackGroup stackId);
+        Task<StackResponse> GetStackByStackId(StackIds stackId);
         Task<IEnumerable<StackResponse>> GetAll();
     }
 }

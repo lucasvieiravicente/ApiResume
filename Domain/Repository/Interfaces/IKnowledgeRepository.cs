@@ -9,6 +9,6 @@ namespace ApiResume.Domain.Repository.Interfaces
     public interface IKnowledgeRepository : IRepository<Knowledge>
     {
         Task<Knowledge> GetKnowledgeWithStack(string id);
-        Task<IEnumerable<Knowledge>> GetKnowledgeByStackId(StackGroup stackId);
+        Task<IEnumerable<Knowledge>> GetKnowledgeByStackId(StackIds stackId);
     }
 }

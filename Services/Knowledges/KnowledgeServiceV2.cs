@@ -36,7 +36,7 @@ namespace ApiResume.Services.Knowledges
 
         public async Task<Knowledge> GetKnowledge(string id) => await _knowledgeRepository.GetKnowledgeWithStack(id);
 
-        public async Task<IEnumerable<KnowledgeResponse>> GetKnowledgeByStackId(StackGroup stackId)
+        public async Task<IEnumerable<KnowledgeResponse>> GetKnowledgeByStackId(StackIds stackId)
         {
             IEnumerable<Knowledge> knowledges = await _knowledgeRepository.GetKnowledgeByStackId(stackId);
             var knowledgesResponses = _mapper.Map<IEnumerable<KnowledgeResponse>>(knowledges);
