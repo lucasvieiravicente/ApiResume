@@ -71,9 +71,16 @@
   },
   {
     "Title": "MySQL",
-    "FirstDescription": "O MySQL é um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface. É atualmente um dos sistemas de gerenciamento de bancos de dados mais populares da Oracle Corporation, com mais de 10 milhões de instalações pelo mundo..",
+    "FirstDescription": "O MySQL é um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface. É atualmente um dos sistemas de gerenciamento de bancos de dados mais populares da Oracle Corporation, com mais de 10 milhões de instalações pelo mundo.",
     "SecondDescription": "Banco de dados que comecei a utilizar com mais frequencia recentemente para poder reduzir custos nos projetos que participei.",
     "FilePathImage": "mysql.png",
+    "StackId": 4
+  },
+  {
+    "Title": "Oracle Database",
+    "FirstDescription": "O Oracle é um SGBD que surgiu no fim dos anos 70, quando Larry Ellison vislumbrou uma oportunidade que outras companhias não haviam percebido, quando encontrou uma descrição de um protótipo funcional de um banco de dados relacional e descobriu que nenhuma empresa tinha se empenhado em comercializar essa tecnologia.",
+    "SecondDescription": "Banco de dados que comecei a utilizar com mais frequencia recentemente já que muitos projetos legados de alguns clientes utilizavam este banco de dados.",
+    "FilePathImage": "oracleDb.png",
     "StackId": 4
   },
   {
