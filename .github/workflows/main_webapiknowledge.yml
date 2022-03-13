@@ -38,6 +38,13 @@ jobs:
     runs-on: windows-latest
     needs: build
     steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.301'
+    
       - name: Run tests
         run: dotnet test ApiResumeTest --no-restore --verbosity normal
       
